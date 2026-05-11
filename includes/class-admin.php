@@ -2,14 +2,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-class QTI_Admin {
+class KWWD_STI_Admin {
 
 	private $option_name = 'quick_text_insert_snippets';
 
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
-		add_action( 'admin_post_qti_save_snippet', array( $this, 'handle_save' ) );
-		add_action( 'admin_post_qti_delete_snippet', array( $this, 'handle_delete' ) );
+		add_action( 'admin_post_kwwd_sti_save_snippet', array( $this, 'handle_save' ) );
+		add_action( 'admin_post_kwwd_sti_delete_snippet', array( $this, 'handle_delete' ) );
 	}
 
 	public function add_admin_menu() {
@@ -38,8 +38,8 @@ class QTI_Admin {
 
 			<h2>Add New Snippet</h2>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-				<?php wp_nonce_field( 'qti_save_action', 'qti_nonce' ); ?>
-				<input type="hidden" name="action" value="qti_save_snippet">
+				<?php wp_nonce_field( 'kwwd_sti_save_action', 'kwwd_sti_nonce' ); ?>
+				<input type="hidden" name="action" value="kwwd_sti_save_snippet">
 				<table class="form-table">
 					<tr>
 						<th><label for="snippet_name">Name</label></th>
@@ -74,8 +74,8 @@ class QTI_Admin {
 								<td><code><?php echo esc_html( substr( $snippet['text'], 0, 80 ) . ( strlen( $snippet['text'] ) > 80 ? '...' : '' ) ); ?></code></td>
 								<td>
 									<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" style="display:inline">
-										<?php wp_nonce_field( 'qti_delete_action', 'qti_nonce' ); ?>
-										<input type="hidden" name="action" value="qti_delete_snippet">
+										<?php wp_nonce_field( 'kwwd_sti_delete_action', 'kwwd_sti_nonce' ); ?>
+										<input type="hidden" name="action" value="kwwd_sti_delete_snippet">
 										<input type="hidden" name="snippet_index" value="<?php echo esc_attr( $index ); ?>">
 										<button class="button button-small" onclick="return confirm('Delete this snippet?')">Delete</button>
 									</form>
@@ -93,7 +93,7 @@ class QTI_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( 'Unauthorized.' );
 		}
-		check_admin_referer( 'qti_save_action', 'qti_nonce' );
+		check_admin_referer( 'kwwd_sti_save_action', 'kwwd_sti_nonce' );
 
 		$name = sanitize_text_field( wp_unslash( $_POST['snippet_name'] ?? '' ) );
 		$text = wp_kses_post( wp_unslash( $_POST['snippet_text'] ?? '' ) );
@@ -116,7 +116,7 @@ class QTI_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( 'Unauthorized.' );
 		}
-		check_admin_referer( 'qti_delete_action', 'qti_nonce' );
+		check_admin_referer( 'kwwd_sti_delete_action', 'kwwd_sti_nonce' );
 
 		$index = intval( $_POST['snippet_index'] ?? -1 );
 		$snippets = $this->get_snippets();

@@ -3,7 +3,7 @@
  * Plugin Name: Simple Text Insert by KWWD
  * Plugin URI:  https://kwwdcoding.github.io/kwwd-simple-text-insert/index.html
  * Description: Insert predefined text snippets and shortcodes into the WordPress editor.
- * Version:     1.2.0
+ * Version:     1.2.2
  * Author:      KWWD
  * License:     GPL3
  * Licence URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-define( 'QTI_VERSION', '1.2.0' );
+define( 'KWWD_STI_VERSION', '1.2.2' );
 
 /**************************************************************
  * UPDATE CHECKER (GITHUB Method)
@@ -48,13 +48,13 @@ $myUpdateChecker->addResultFilter(function($info) use ($githubAssets) {
 
 
 
-define( 'QTI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'QTI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'KWWD_STI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'KWWD_STI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-require_once QTI_PLUGIN_DIR . 'includes/class-admin.php';
-require_once QTI_PLUGIN_DIR . 'includes/class-tinymce.php';
-require_once QTI_PLUGIN_DIR . 'includes/class-gutenberg.php';
+require_once KWWD_STI_PLUGIN_DIR . 'includes/class-admin.php';
+require_once KWWD_STI_PLUGIN_DIR . 'includes/class-tinymce.php';
+require_once KWWD_STI_PLUGIN_DIR . 'includes/class-gutenberg.php';
 
-new QTI_Admin();
-new QTI_TinyMCE();
-new QTI_Gutenberg();
+new KWWD_STI_Admin();
+new KWWD_STI_TinyMCE();
+new KWWD_STI_Gutenberg();

@@ -48,6 +48,9 @@ Open the block inserter (the **+** button) and search for your snippet's name. E
 
 ## Changelog
 
+### 1.2.2
+- Standardised variable names and captialisation across functions
+
 ### 1.2.1
 - Added the README.md file
 - Minor text changes to ensure consistency across the plugin

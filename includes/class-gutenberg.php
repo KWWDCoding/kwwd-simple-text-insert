@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-class QTI_Gutenberg {
+class KWWD_STI_Gutenberg {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_blocks' ) );
@@ -53,9 +53,9 @@ class QTI_Gutenberg {
 
 		wp_enqueue_script(
 			$handle,
-			QTI_PLUGIN_URL . 'assets/js/gutenberg-plugin.js',
+			KWWD_STI_PLUGIN_URL . 'assets/js/gutenberg-plugin.js',
 			array( 'wp-blocks', 'wp-element', 'wp-i18n' ),
-			QTI_VERSION,
+			KWWD_STI_VERSION,
 			true
 		);
 

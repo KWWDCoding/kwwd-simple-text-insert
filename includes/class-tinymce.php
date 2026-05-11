@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-class QTI_TinyMCE {
+class KWWD_STI_TinyMCE {
 
 	public function __construct() {
 		add_action( 'admin_head', array( $this, 'inject_data' ) );
@@ -25,7 +25,7 @@ class QTI_TinyMCE {
 	}
 
 	public function register_plugin( $plugins ) {
-		$plugins['quicktextinsert'] = QTI_PLUGIN_URL . 'assets/js/editor-plugin.js';
+		$plugins['quicktextinsert'] = KWWD_STI_PLUGIN_URL . 'assets/js/editor-plugin.js';
 		return $plugins;
 	}
 
