@@ -3,7 +3,7 @@
  * Plugin Name: Simple Text Insert by KWWD
  * Plugin URI:  https://kwwdcoding.github.io/kwwd-simple-text-insert/index.html
  * Description: Insert predefined text snippets and shortcodes into the WordPress editor.
- * Version:     1.2.2
+ * Version:     1.2.3
  * Author:      KWWD
  * License:     GPL3
  * Licence URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-define( 'KWWD_STI_VERSION', '1.2.2' );
+define( 'KWWD_STI_VERSION', '1.2.3' );
 
 /**************************************************************
  * UPDATE CHECKER (GITHUB Method)
