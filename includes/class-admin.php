@@ -14,8 +14,8 @@ class QTI_Admin {
 
 	public function add_admin_menu() {
 		add_options_page(
-			'Quick Text Insert',
-			'Quick Text Insert',
+			'Simple Text Insert',
+			'Simple Text Insert',
 			'manage_options',
 			'quick-text-insert',
 			array( $this, 'render_page' )
@@ -34,7 +34,7 @@ class QTI_Admin {
 		$snippets = $this->get_snippets();
 		?>
 		<div class="wrap">
-			<h1>Quick Text Insert</h1>
+			<h1>Simple Text Insert</h1>
 
 			<h2>Add New Snippet</h2>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
